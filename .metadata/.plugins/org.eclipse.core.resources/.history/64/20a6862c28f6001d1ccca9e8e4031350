@@ -1,0 +1,26 @@
+/*
+ * NVIC_Private.h
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#ifndef NVIC_PRIVATE_H_
+#define NVIC_PRIVATE_H_
+
+typedef struct
+{
+	volatile u32 ISER[32]; //volatile u32 ISER
+	volatile u32 ICER[32];
+	volatile u32 ISPR[32];
+	volatile u32 ICPR[32];
+	volatile u32 IABR[32];
+	volatile u32 RES [32];
+	volatile u32 IPR [32];
+};
+
+#define NVIC	((volatile NVIC_t*)0xE000E100)
+
+
+
+#endif /* NVIC_PRIVATE_H_ */

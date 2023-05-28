@@ -1,0 +1,20 @@
+/*
+ * RTOS_Private.h
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#ifndef RTOS_PRIVATE_H_
+#define RTOS_PRIVATE_H_
+
+typedef struct
+{
+	void (*PF)(void);
+	u32 First_Delay;
+
+}TCB;
+
+
+
+#endif /* RTOS_PRIVATE_H_ */

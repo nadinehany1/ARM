@@ -1,0 +1,62 @@
+/*
+ * STK_Program.c
+ *
+ *  Created on: 13/5/2023
+ *      Author: Nadine Hany
+ */
+
+#include <STK_Config.h>
+#include <STK_Interface.h>
+#include <STK_Private.h>
+#include "BIT_MATH.h"
+#include "STD_TYPES.h"
+
+void MSTK_voidInit(void)
+{
+	SET_BIT(STK_CTRL,2);
+
+}
+
+void MSTK_voidSetBusyWait(u32 Copy_u32Ticks)
+{
+	STK_VAL = 0;
+
+}
+
+void MSTK_voidSetIntervalSingle(u32 Copy_u32Ticks, void(*Copy_ptr)(void))
+{
+
+}
+
+void MSTK_voidSetIntervalPeriodic(u32 Copy_u32Ticks, void(*Copy_ptr)(void))
+{
+
+}
+
+void MSTK_voidStopInterval(void)
+{
+
+}
+
+u32 MSTK_u32GetElapsedTime()
+{
+
+}
+
+u32 MSTK_u32GetRemaingTime()
+{
+
+}
+
+void MSYT_TickHandler(void)
+{
+
+}
+
+
+
+
+
+
+
+

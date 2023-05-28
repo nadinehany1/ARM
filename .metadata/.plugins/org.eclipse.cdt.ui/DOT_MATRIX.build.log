@@ -1,0 +1,11 @@
+17:34:02 **** Incremental Build of configuration Debug for project DOT_MATRIX ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "DOT_MATRIX.elf"
+   text	   data	    bss	    dec	    hex	filename
+   8955	    168	    416	   9539	   2543	DOT_MATRIX.elf
+Finished building: DOT_MATRIX.siz
+ 
+
+17:34:02 Build Finished (took 240ms)
+

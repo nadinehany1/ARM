@@ -1,0 +1,11 @@
+10:25:43 **** Incremental Build of configuration Debug for project COTS_STK ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "COTS_STK.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9227	    160	    416	   9803	   264b	COTS_STK.elf
+Finished building: COTS_STK.siz
+ 
+
+10:25:43 Build Finished (took 224ms)
+

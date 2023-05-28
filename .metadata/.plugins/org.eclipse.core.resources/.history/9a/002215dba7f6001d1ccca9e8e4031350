@@ -1,0 +1,51 @@
+#include "BIT_MATH.h"
+#include "STD_TYPES.h"
+
+#include "GPIO_Interface.h"
+#include "RCC_Interface.h"
+#include "NVIC_Interface.h"
+#include "STK_Interface.h"
+
+void SysTick_Handeler(void);
+
+int main(void)
+{
+	RCC_voidInitSysClk();
+	MSTK_voidInit();
+	RCC_voidEnablePeriphral(AHB1,0);
+	GPIO_voidSetPinOutputConfig(GPIOA,PIN1,OUTPUT_PP,OUTPUT_LS);
+	NVIC_voidEnablePerInt(6);
+
+	while(1)
+	{
+		GPIO_voidDirectSetResetPinValue(GPIOA,PIN1,SET);
+		MSTK_voidSetBusyWait(50000);
+		GPIO_voidDirectSetResetPinValue(GPIOA,PIN1,RESET);
+		MSTK_voidSetBusyWait(50000);
+
+	}
+	return 0;
+}
+
+
+void SysTick_Handler(void)
+{
+	u8 Local_u8Temporary=0;
+
+	if (STK_u8ModeOfInterval == STK_SINGLE_INTERVAL)
+	{
+		/* Disable STK Interrupt */
+		CLR_BIT(STK->CTRL, 1);
+		/* Stop Timer */
+		CLR_BIT(STK->CTRL, 0);
+		STK -> LOAD = 0;
+		STK -> VAL  = 0;
+	}
+
+	/* Callback notification */
+	STK_CallBack();
+
+	/* Clear interrupt flag */
+	Local_u8Temporary = GET_BIT(STK->CTRL,16);
+}
+

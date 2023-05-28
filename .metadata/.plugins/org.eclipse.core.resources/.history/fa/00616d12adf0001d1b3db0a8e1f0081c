@@ -1,0 +1,17 @@
+/*
+ * GPIOProgram.h
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#ifndef GPIOPROGRAM_H_
+#define GPIOPROGRAM_H_
+
+class GPIO_Program {
+public:
+	GPIO_Program();
+	virtual ~GPIO_Program();
+};
+
+#endif /* GPIOPROGRAM_H_ */

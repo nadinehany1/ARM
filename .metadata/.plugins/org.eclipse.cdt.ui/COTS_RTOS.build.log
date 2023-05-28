@@ -1,0 +1,47 @@
+11:32:55 **** Incremental Build of configuration Debug for project COTS_RTOS ****
+make all 
+Building file: ../src/main.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"src/main.d" -MT"src/main.o" -c -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:97:14: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+  xTaskCreate(Task1,NULL,50,NULL,1,NULL);
+              ^~~~~
+In file included from ../src/main.c:12:0:
+../src/task.h:355:16: note: expected 'TaskFunction_t {aka void (*)(void *)}' but argument is of type 'void (*)(void)'
+     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+                ^~~~~~~~~~~
+../src/main.c:98:14: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+  xTaskCreate(Task2,NULL,50,NULL,2,NULL);
+              ^~~~~
+In file included from ../src/main.c:12:0:
+../src/task.h:355:16: note: expected 'TaskFunction_t {aka void (*)(void *)}' but argument is of type 'void (*)(void)'
+     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+                ^~~~~~~~~~~
+../src/main.c:99:14: warning: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+  xTaskCreate(Task3,NULL,50,NULL,3,NULL);
+              ^~~~~
+In file included from ../src/main.c:12:0:
+../src/task.h:355:16: note: expected 'TaskFunction_t {aka void (*)(void *)}' but argument is of type 'void (*)(void)'
+     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+                ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: COTS_RTOS.elf
+Invoking: Cross ARM GNU C++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -T mem.ld -T libs.ld -T sections.ld -nostartfiles -Xlinker --gc-sections -L"../ldscripts" -Wl,-Map,"COTS_RTOS.map" --specs=nano.specs -o "COTS_RTOS.elf"  ./system/src/stm32f4-hal/stm32f4xx_hal.o ./system/src/stm32f4-hal/stm32f4xx_hal_cortex.o ./system/src/stm32f4-hal/stm32f4xx_hal_dfsdm.o ./system/src/stm32f4-hal/stm32f4xx_hal_flash.o ./system/src/stm32f4-hal/stm32f4xx_hal_gpio.o ./system/src/stm32f4-hal/stm32f4xx_hal_iwdg.o ./system/src/stm32f4-hal/stm32f4xx_hal_pwr.o ./system/src/stm32f4-hal/stm32f4xx_hal_rcc.o  ./system/src/newlib/_cxx.o ./system/src/newlib/_exit.o ./system/src/newlib/_sbrk.o ./system/src/newlib/_startup.o ./system/src/newlib/_syscalls.o ./system/src/newlib/assert.o  ./system/src/diag/Trace.o ./system/src/diag/trace_impl.o  ./system/src/cortexm/_initialize_hardware.o ./system/src/cortexm/_reset_hardware.o ./system/src/cortexm/exception_handlers.o  ./system/src/cmsis/system_stm32f4xx.o ./system/src/cmsis/vectors_stm32f401xc.o  ./src/GPIO_Program.o ./src/RCC_Program.o ./src/RTOS_Program.o ./src/STK_Program.o ./src/_initialize_hardware.o ./src/_write.o ./src/croutine.o ./src/event_groups.o ./src/heap_4.o ./src/list.o ./src/main.o ./src/port.o ./src/queue.o ./src/stm32f4xx_hal_msp.o ./src/stream_buffer.o ./src/tasks.o ./src/timers.o   
+Finished building target: COTS_RTOS.elf
+ 
+Invoking: Cross ARM GNU Create Flash Image
+arm-none-eabi-objcopy -O ihex "COTS_RTOS.elf"  "COTS_RTOS.hex"
+Finished building: COTS_RTOS.hex
+ 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "COTS_RTOS.elf"
+   text	   data	    bss	    dec	    hex	filename
+  16695	    168	  21216	  38079	   94bf	COTS_RTOS.elf
+Finished building: COTS_RTOS.siz
+ 
+
+11:32:55 Build Finished (took 757ms)
+

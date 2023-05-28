@@ -1,0 +1,20 @@
+/*
+ * NVIC_Interface.h
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#ifndef NVIC_INTERFACE_H_
+#define NVIC_INTERFACE_H_
+
+void NVIC_voidEnablePerInt(u8 Copy_u8IntId);
+void NVIC_DisableIRQ(IRQn_Type IRQn);
+void NVIC_SetPendingIRQ(IRQn_Type IRQn);
+void NVIC_ClearPendingIRQ(IRQn_Type IRQn);
+uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn);
+void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority);
+uint32_t NVIC_GetPriority(IRQn_Type IRQn);
+
+
+#endif /* NVIC_INTERFACE_H_ */

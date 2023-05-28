@@ -1,0 +1,11 @@
+13:30:31 **** Incremental Build of configuration Debug for project COTS_NVIC ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "COTS_NVIC.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9403	    160	    424	   9987	   2703	COTS_NVIC.elf
+Finished building: COTS_NVIC.siz
+ 
+
+13:30:31 Build Finished (took 229ms)
+

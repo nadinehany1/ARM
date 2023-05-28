@@ -1,0 +1,29 @@
+#include "BIT_MATH.h"
+#include "STD_TYPES.h"
+
+#include "GPIO_Interface.h"
+#include "RCC_Interface.h"
+
+void App_voidDelayMS(u32 Copy_32Delay);
+
+int main(void)
+{
+  // At this stage the system clock should have already been configured
+  // at high speed.
+
+  // Infinite loop
+  while (1)
+    {
+       // Add your code here.
+    }
+  return 0;
+}
+
+
+void App_voidDelayMS(u32 Copy_32Delay)
+{
+	for(u32 i=0; i<Copy_32Delay*300;i++)
+	{
+		asm("NOP");
+	}
+}

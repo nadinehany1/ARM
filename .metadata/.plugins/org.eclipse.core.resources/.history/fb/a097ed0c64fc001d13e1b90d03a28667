@@ -1,0 +1,39 @@
+#include "BIT_MATH.h"
+#include "STD_TYPES.h"
+
+#include "GPIO_Interface.h"
+#include "RCC_Interface.h"
+#include "STK_Interface.h"
+
+//#include "RTOS_Config.h"
+//#include "RTOS_Interface.h"
+//#include "RTOS_Private.h"
+#include "FreeRTOS.h"
+#include "task.h"
+void Task1(void)
+{
+	static u8 flag = 0;
+	while(1)
+	{
+		if(flag==0)
+		{
+			GPIO_voidSetPinValue(GPIOA,PIN0,1);
+			flag=1;
+		}
+	}
+}
+int main()
+{
+  // At this stage the system clock should have already been configured
+  // at high speed.
+
+  // Infinite loop
+  while (1)
+    {
+       // Add your code here.
+    }
+  return 0;
+}
+
+
+// ----------------------------------------------------------------------------

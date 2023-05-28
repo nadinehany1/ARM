@@ -1,0 +1,11 @@
+11:32:54 **** Build of configuration Debug for project COTS_GPIO ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "COTS_GPIO.elf"
+   text	   data	    bss	    dec	    hex	filename
+   9115	    160	    416	   9691	   25db	COTS_GPIO.elf
+Finished building: COTS_GPIO.siz
+ 
+
+11:32:54 Build Finished (took 329ms)
+
