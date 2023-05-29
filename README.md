@@ -1,2 +1,2 @@
 # ARM
-This a ITI just learning purpose
+This an ITI just learning purpose
