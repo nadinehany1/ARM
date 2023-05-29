@@ -4,20 +4,11 @@
 		<extension point="org.eclipse.cdt.core.LanguageSettingsProvider">
 			<provider id="ilg.gnuarmeclipse.managedbuild.cross.GCCBuiltinSpecsDetector">
 				<language id="org.eclipse.cdt.core.gcc">
-					<entry kind="includePath" name="/${ProjName}/#undef __ARM_FEATURE_CRYPTO">
-						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
-					</entry>
 					<entry kind="includePath" name="F:/Embedded Systems ( ITI )/ITI/ARM/02- Tools-001/02- Tools/03- IMT SDK/IMT_SDK_Win_64/IMT_SDK_Win_64/WinARM/ArmGCC/lib/gcc/arm-none-eabi/7.2.1/include">
 						<flag value="BUILTIN|READONLY"/>
 					</entry>
 					<entry kind="includePath" name="F:/Embedded Systems ( ITI )/ITI/ARM/02- Tools-001/02- Tools/03- IMT SDK/IMT_SDK_Win_64/IMT_SDK_Win_64/WinARM/ArmGCC/lib/gcc/arm-none-eabi/7.2.1/include-fixed">
 						<flag value="BUILTIN|READONLY"/>
-					</entry>
-					<entry kind="includePath" name="/${ProjName}/#undef __ARM_FEATURE_QRDMX">
-						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
-					</entry>
-					<entry kind="includePath" name="/${ProjName}/#undef __ARM_FEATURE_NUMERIC_MAXMIN">
-						<flag value="BUILTIN|READONLY|VALUE_WORKSPACE_PATH"/>
 					</entry>
 					<entry kind="includePath" name="F:/Embedded Systems ( ITI )/ITI/ARM/02- Tools-001/02- Tools/03- IMT SDK/IMT_SDK_Win_64/IMT_SDK_Win_64/WinARM/ArmGCC/arm-none-eabi/include">
 						<flag value="BUILTIN|READONLY"/>

@@ -1,1 +1,4 @@
 1685173122710	Delete resource 'COTS_RTOS/src/FreeRTOSConfig.h'
+1685335474328	Rename resource 'RCC'
+1685335611269	Delete resource 'GPIO'
+1685335638719	Delete resource 'COTS_Schedular'
