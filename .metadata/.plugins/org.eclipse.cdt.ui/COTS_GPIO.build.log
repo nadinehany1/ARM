@@ -1,4 +1,4 @@
-11:32:54 **** Build of configuration Debug for project COTS_GPIO ****
+12:42:31 **** Incremental Build of configuration Debug for project COTS_GPIO ****
 make all 
 Invoking: Cross ARM GNU Print Size
 arm-none-eabi-size --format=berkeley "COTS_GPIO.elf"
@@ -7,5 +7,5 @@ arm-none-eabi-size --format=berkeley "COTS_GPIO.elf"
 Finished building: COTS_GPIO.siz
  
 
-11:32:54 Build Finished (took 329ms)
+12:42:32 Build Finished (took 312ms)
 

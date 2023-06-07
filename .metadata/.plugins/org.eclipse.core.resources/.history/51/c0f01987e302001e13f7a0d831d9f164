@@ -1,0 +1,23 @@
+/*
+ * USART_Interface.h
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#ifndef USART_INTERFACE_H_
+#define USART_INTERFACE_H_
+
+
+void MSUART_voidInit(void);
+
+void MUSART_voidEnable(u8 copy_u8Index);
+
+void MUSART_voidDisable(u8 copy_u8Index);
+
+void MUSART_u8SendData(u8 copy_u8Index, u8* copy_u8Data, u8 copy_u8Len);
+
+u8 MUSART_u8ReadData(u8 copy_u8Index);
+
+
+#endif /* USART_INTERFACE_H_ */

@@ -1,0 +1,14 @@
+14:01:41 **** Build of configuration Debug for project UART ****
+make all 
+Building file: ../system/src/stm32f4-hal/stm32f4xx_hal.c
+Invoking: Cross ARM GNU C Compiler
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=soft -Og -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -ffreestanding -fno-move-loop-invariants -Wall -Wextra  -g3 -DDEBUG -DUSE_FULL_ASSERT -DTRACE -DOS_USE_TRACE_SEMIHOSTING_DEBUG -DSTM32F401xC -DUSE_HAL_DRIVER -DHSE_VALUE=25000000 -I"../include" -I"../system/include" -I"../system/include/cmsis" -I"../system/include/stm32f4-hal" -std=gnu11 -MMD -MP -MF"system/src/stm32f4-hal/stm32f4xx_hal.d" -MT"system/src/stm32f4-hal/stm32f4xx_hal.o" -c -o "system/src/stm32f4-hal/stm32f4xx_hal.o" "../system/src/stm32f4-hal/stm32f4xx_hal.c"
+In file included from ../system/src/stm32f4-hal/stm32f4xx_hal.c:54:0:
+../system/include/stm32f4-hal/stm32f4xx_hal.h:48:10: fatal error: stm32f4xx_hal_conf.h: No such file or directory
+ #include "stm32f4xx_hal_conf.h"
+          ^~~~~~~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [system/src/stm32f4-hal/subdir.mk:230: system/src/stm32f4-hal/stm32f4xx_hal.o] Error 1
+
+14:01:41 Build Finished (took 507ms)
+

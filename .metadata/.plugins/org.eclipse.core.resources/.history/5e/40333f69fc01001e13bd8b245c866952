@@ -1,0 +1,23 @@
+/*
+ * TFT_Program.c
+ *
+ *  Created on: 3/6/2023
+ *      Author: Nadine Hany
+ */
+
+#include "LBIT_MATH.h"
+#include "LSTD_TYPES.h"
+
+#include "MRCC_Interface.h"
+#include "GPIO_Interface.h"
+#include "STP_Interface.h"
+#include "SYSTICK_Interface.h"
+
+
+#include "TFT_Interface.h"
+#include "TFT_Config.h"
+#include "TFT_Private.h"
+
+
+
+

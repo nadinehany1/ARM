@@ -1,0 +1,17 @@
+/*
+ * SPI_Interface.h
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#ifndef SPI_INTERFACE_H_
+#define SPI_INTERFACE_H_
+
+void SPI_voidInit();
+void SPI_voidSendData(u8 Local_u8Data);
+void SPI_voidInit();
+
+
+
+#endif /* SPI_INTERFACE_H_ */

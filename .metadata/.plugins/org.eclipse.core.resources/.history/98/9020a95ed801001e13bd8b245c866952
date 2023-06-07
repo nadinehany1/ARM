@@ -1,0 +1,64 @@
+/*
+ * STP_Program.c
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#include "RCC_Interface.h"
+#include "GPIO_Interface.h"
+#include "STK_Config.h"
+
+#include "STP_Private.h"
+#include "STP_Interface.h"
+#include "STP_Config.h"
+
+void STP_VidInit( void )
+{
+	GPIO_voidSetPinOutputConfig()
+}
+
+void STP_VidByteOutput ( u8 Copy_u8Data ){
+
+	u8 Local_u8Iterator ;
+
+	GPIO_VidSetPinValue( STP_BYTE_LATCH_PORT , STP_BYTE_LATCH_PIN , LOW );
+
+	for( Local_u8Iterator = 8 ; Local_u8Iterator > 0 ; Local_u8Iterator-- ){
+
+		GPIO_VidSetPinValue( STP_DATA_PORT , STP_DATA_PIN , ( GET_BIT( Copy_u8Data , ( Local_u8Iterator - 1 ) ) ) );
+
+		GPIO_VidSetPinValue( STP_BIT_LATCH_PORT , STP_BIT_LATCH_PIN , HIGH  );
+		_delay_us(5);
+		GPIO_VidSetPinValue( STP_BIT_LATCH_PORT , STP_BIT_LATCH_PIN , LOW	 );
+
+	}
+
+	GPIO_VidSetPinValue( STP_BYTE_LATCH_PORT , STP_BYTE_LATCH_PIN , HIGH );
+	_delay_us( 5 );
+	GPIO_VidSetPinValue( STP_BYTE_LATCH_PORT , STP_BYTE_LATCH_PIN , LOW  );
+
+}
+
+void STP_VidHalfWordOutput ( u16 Copy_u8Data ){
+
+	u8 LOC_u8Iterator ;
+
+	GPIO_VidSetPinValue( STP_BYTE_LATCH_PORT , STP_BYTE_LATCH_PIN , LOW );
+
+	for( LOC_u8Iterator = 16 ; LOC_u8Iterator > 0 ; LOC_u8Iterator-- ){
+
+		GPIO_VidSetPinValue( STP_DATA_PORT , STP_DATA_PIN , ( GET_BIT( Copy_u8Data , ( LOC_u8Iterator - 1 ) ) ) );
+
+		GPIO_VidSetPinValue( STP_BIT_LATCH_PORT , STP_BIT_LATCH_PIN , HIGH  );
+		_delay_us( 5 );
+		GPIO_VidSetPinValue( STP_BIT_LATCH_PORT , STP_BIT_LATCH_PIN , LOW	 );
+
+	}
+
+	GPIO_VidSetPinValue( STP_BYTE_LATCH_PORT , STP_BYTE_LATCH_PIN , HIGH );
+	_delay_us( 5 );
+	GPIO_VidSetPinValue( STP_BYTE_LATCH_PORT , STP_BYTE_LATCH_PIN , LOW  );
+
+}
+

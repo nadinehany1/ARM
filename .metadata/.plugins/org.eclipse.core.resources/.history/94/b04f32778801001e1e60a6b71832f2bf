@@ -1,0 +1,28 @@
+/*
+ * SPI_Program.c
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#include "BIT_MATH.h"
+#include "STD_TYPES.h"
+
+#include "SPI_Interface.h"
+#include "SPI_Config.h"
+#include "SPI_Private.h"
+
+void SPI_voidInit(void)
+{
+
+}
+void SPI_voidSendData(u8 Copy_u8Data)
+{
+
+}
+void SPI_voidSetCallBack(void (*ptr)(void))
+{
+
+}
+
+

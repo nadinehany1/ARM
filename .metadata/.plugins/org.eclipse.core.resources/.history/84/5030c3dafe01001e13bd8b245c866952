@@ -1,0 +1,43 @@
+/*
+ * TFT_Program.c
+ *
+ *  Created on: 3/6/2023
+ *      Author: Nadine Hany
+ */
+
+#include "LBIT_MATH.h"
+#include "LSTD_TYPES.h"
+
+#include "MRCC_Interface.h"
+#include "GPIO_Interface.h"
+#include "SYSTICK_Interface.h"
+
+#include "TFT_Interface.h"
+#include "TFT_Config.h"
+#include "TFT_Private.h"
+
+
+void TFT_SendCommand(u8 Copy_u8Command)
+{
+	/*Set Pin A0 to Low*/
+	GPIO_voidSetPinValueNonAtumic(GPPIOA,);
+}
+
+void TFT_SendData(u8 Copy_u8Data)
+{
+	GPIO_voidSetPinValueNonAtumic()
+}
+
+void Reset()
+{
+
+}
+
+void TFT_Init()
+{
+	Reset();
+	GPIO_voidSetPinValueNonAtumic(TFT_RST_PIN,HIGH);
+
+}
+
+

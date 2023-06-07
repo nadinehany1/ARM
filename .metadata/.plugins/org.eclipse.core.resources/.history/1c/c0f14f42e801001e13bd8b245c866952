@@ -1,0 +1,50 @@
+/*
+ * STP_Program.c
+ *
+ *  Created on: ???/???/????
+ *      Author: lenovo
+ */
+
+#include "BIT_MATH.h"
+#include "STD_TYPES.h"
+
+#include "RCC_Interface.h"
+#include "GPIO_Interface.h"
+#include "STK_Config.h"
+
+#include "STP_Private.h"
+#include "STP_Interface.h"
+#include "STP_Config.h"
+
+/*Serial to parallel*/
+void STP_voidInit()
+{
+    /*Configure Pins A0, A1, A2 as O/P pins, Push Pull, Ls*/
+    GPIO_voidSetPinMode(STP_SERIAL_DATA, OUTPUT);
+    GPIO_voidSetPinMode(STP_STORE_CLOCK, OUTPUT);
+    GPIO_voidSetPinMode(STP_SHIFT_CLOCK, OUTPUT);
+}
+
+void STP_voidSendSynchronus(u8 Copy_u8DataToBeSent)
+{
+    s8 Local_u8Counter;
+    u8 Local_u8Bit;
+    for(Local_u8Counter = 7; Local_u8Counter >= 0; Local_u8Counter--)
+    {
+        Local_u8Bit = GET_BIT(Copy_u8DataToBeSent, Local_u8Counter);
+
+        GPIO_voidSetPinValue(STP_SERIAL_DATA, Local_u8Bit);
+
+        /*Send Pulse to Shift Clock*/
+        GPIO_voidSetPinValue(STP_SHIFT_CLOCK, SET);
+        STK_voidSetBusyWait(1);
+        GPIO_voidSetPinValue(STP_SHIFT_CLOCK, RST);
+        STK_voidSetBusyWait(1);
+    }
+    /*Send Pulse to Shift Clock*/
+    GPIO_voidSetPinValue(STP_STORE_CLOCK, SET);
+    STK_voidSetBusyWait(1);
+    GPIO_voidSetPinValue(STP_STORE_CLOCK, RST);
+    STK_voidSetBusyWait(1);
+}
+

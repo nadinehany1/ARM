@@ -1,0 +1,9 @@
+#ifndef STP_CONGIG_H_
+#define STP_CONFIG_H_
+
+#define STP_SERIAL_DATA  GPIOA,PIN0
+#define STP_STOR_CLOCK   GPIOA,PIN1
+#define STP_SHIFT_CLOCK  GPIOA,PIN2
+
+
+#endif /* HLED_MATRIX_CONFIG_H_ */

@@ -1,0 +1,11 @@
+08:22:34 **** Incremental Build of configuration Debug for project COTS_RCC ****
+make all 
+Invoking: Cross ARM GNU Print Size
+arm-none-eabi-size --format=berkeley "COTS_RCC.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4695	    160	    412	   5267	   1493	COTS_RCC.elf
+Finished building: COTS_RCC.siz
+ 
+
+08:22:34 Build Finished (took 246ms)
+

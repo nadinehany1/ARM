@@ -1,0 +1,29 @@
+#include "BIT_MATH.h"
+#include "STD_TYPES.h"
+
+#include "RCC_Interface.h"
+#include "GPIO_Interface.h"
+#include "STK_Interface.h"
+
+#include "STP_Interface.h"
+
+
+int main()
+{
+	RCC_voidInitSysClk();
+	RCC_voidEnablePeripheralClock(AHB1 , 0);
+
+	STK_voidIint();
+	STP_voidInit();
+
+
+	while(1)
+    {
+	  // STP_voidSynchronus(0x55);
+		for (u8 i=0;i<8;i++)
+		{
+			STP_voidSendSynchronus(1<<i);
+			STK_voidDelayMs(300000);
+		}
+    }
+}
