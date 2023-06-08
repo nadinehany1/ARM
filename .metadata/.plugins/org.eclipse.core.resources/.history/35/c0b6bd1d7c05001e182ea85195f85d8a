@@ -4,16 +4,16 @@
  *  Created on: 4/4/2023
  *      Author: Nadine Hany
  */
-#include "STD_TYPES.h"
-#include "BIT_MATH.h"
+#include "../../../LIB/STD_TYPES.h"
+#include "../../../LIB/BIT_MATH.h"
 
 #include "ADC_Config.h"
 #include "ADC_Interface.h"
 #include "ADC_Private.h"
 
+#include "util/delay.h"
 
-
-#include "GPIO_Interface.h"
+#include "../../DIO/DIO_Interface.h"
 
 /*Indicator for ADC Busy or not*/
 u8 ADC_u8BusyFlag = NOTBUSY;
@@ -36,7 +36,7 @@ void (*ADC_pvNotificationFunction)(void) = NULL;
 void ADC_voidInit(void)
 {
 	/*Configure the direction of PORTA pins as I/P*/
-	DIO_voidSetPortDirection(GPIOA,INPUT);
+	DIO_voidSetPortDirection(PORTA,INPUT);
 
 	/*Set Reference Voltage*/
 	#if		ADC_REFVOLT == ADC_AREF

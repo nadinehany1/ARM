@@ -36,7 +36,7 @@ void (*ADC_pvNotificationFunction)(void) = NULL;
 void ADC_voidInit(void)
 {
 	/*Configure the direction of PORTA pins as I/P*/
-	DIO_voidSetPortDirection(GPIOA,INPUT);
+	DIO_voidSetPortDirection(PORTA,INPUT);
 
 	/*Set Reference Voltage*/
 	#if		ADC_REFVOLT == ADC_AREF
